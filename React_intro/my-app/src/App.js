@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MyButton from './myButton';
 import Profile from './ImageEx';
+import ShoppingList from './list';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <h1> React Intro </h1>
         {content}
 
+        <ShoppingList />
       </header>
     </div>
   );
