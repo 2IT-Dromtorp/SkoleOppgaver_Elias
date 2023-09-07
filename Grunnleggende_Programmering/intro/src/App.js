@@ -4,6 +4,8 @@ import Oppgave1 from './oppgave1';
 import Mattematikk from './oppgave2';
 import Oppgave3 from './oppgave3';
 import NumberGuesser from './oppgave4';
+import DigitalClock from './digitalClock';
+
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
       {/* <Mattematikk /> */}
       {/* <TallGjett /> */}
       {/* <Oppgave3 /> */}
-      <NumberGuesser />
+      {/* <NumberGuesser /> */}
+      <DigitalClock />
       </header>
     </div>
   );
