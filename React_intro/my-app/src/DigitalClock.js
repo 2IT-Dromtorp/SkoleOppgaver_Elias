@@ -49,4 +49,4 @@ export default function DigitalClock() {
             </header>
         </div>
     )
-}
+}   

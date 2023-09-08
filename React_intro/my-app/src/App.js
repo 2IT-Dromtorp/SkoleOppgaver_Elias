@@ -4,6 +4,7 @@ import MyButton from './myButton';
 import Profile from './ImageEx';
 import ShoppingList from './list';
 import DigitalClock from './DigitalClock';
+import OppNed from './oppNedPil';
 
 
 // function App() {
@@ -35,7 +36,7 @@ import DigitalClock from './DigitalClock';
 
 function App() {
   return(
-    <DigitalClock />
+    <OppNed />
   )
 }
 
