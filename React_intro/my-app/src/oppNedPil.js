@@ -16,9 +16,9 @@ export default function OppNed() {
         
         <div className='App'>
              <header className='App-header'>
-                <button className='buttonOpp' onClick={pilOpp}></button>
+                <button className='buttonOpp' onClick={pilOpp}>Opp</button>
                 <h1>{count}</h1>
-                <button className='buttonNed' onClick={pilNed}>test2</button>
+                <button className='buttonNed' onClick={pilNed}>Ned</button>
             </header>
         </div>
 

@@ -5,6 +5,7 @@ import Profile from './ImageEx';
 import ShoppingList from './list';
 import DigitalClock from './DigitalClock';
 import OppNed from './oppNedPil';
+import NedTelling from './Nedtelling';
 
 
 // function App() {
@@ -36,7 +37,7 @@ import OppNed from './oppNedPil';
 
 function App() {
   return(
-    <OppNed />
+    <NedTelling />
   )
 }
 
