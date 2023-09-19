@@ -39,7 +39,6 @@ export default function DigitalClock() {
         return () => clearInterval(myInterval)
 
     }, []);
-
     return(
         <div className='App'>
             <header className='App-header'>
