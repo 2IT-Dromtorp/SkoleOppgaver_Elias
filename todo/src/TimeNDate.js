@@ -20,6 +20,6 @@ export default function TnD (){
      
 
     return(
-        <h1>{displayWeek}<br></br>{date}{displayth}<br></br>{displayMonth}</h1>
+        <h1>{displayWeek} {date}{displayth} {displayMonth}</h1>
     )
 }
