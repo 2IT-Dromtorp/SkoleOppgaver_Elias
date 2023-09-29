@@ -10,13 +10,26 @@ export default function TodoApp() {
 
   const handleAddTodo = () => {
     if (newTodo.trim() !== '') {
-      setTodos([...todos, newTodo]);
+      // Create a new to-do object with a unique ID and initial status of not finished
+      const newTodoItem = {
+        id: Date.now(),
+        text: newTodo,
+        finished: false,
+      };
+      setTodos([...todos, newTodoItem]);
       setNewTodo('');
     }
   };
 
-  const handleDeleteTodo = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
+  const handleDeleteTodo = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+  };
+
+  const handleToggleFinished = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, finished: !todo.finished } : todo
+    );
     setTodos(updatedTodos);
   };
 
@@ -33,15 +46,20 @@ export default function TodoApp() {
         <button onClick={handleAddTodo}>Add</button>
       </div>
       <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>
-            {todo}
-            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <span
+              style={{ textDecoration: todo.finished ? 'line-through' : 'none' }}
+            >
+              {todo.text}
+            </span>
+            <button onClick={() => handleToggleFinished(todo.id)}>
+              {todo.finished ? 'Unmark' : 'Mark'} as Finished
+            </button>
+            <button onClick={() => handleDeleteTodo(todo.id)}>Remove</button>
           </li>
         ))}
       </ul>
     </div>
   );
 }
-
-
