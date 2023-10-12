@@ -1,6 +1,5 @@
 import './App.css';
-import Elev from './elev';
-import {Link} from 'react-router-dom';
+import Elev from './Elev';
 
 export default function Home() {
 
@@ -13,7 +12,7 @@ export default function Home() {
             <div className='box'>
 
               <div className='sitteplasser'>
-                <Link name="Andreas" to="/profile/1">Andreas</Link>
+                <Elev name="Andreas"/>
                 <Elev name="Ahmad"/>
               </div>
 

@@ -76,16 +76,17 @@
   background: blue;
 }
 
-.profile_container {
-  height: 100vh;
-  width: 100%;
+.profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100%;
+
 }
 
-.boks {
-  border: black solid 2px;
-  background: crimson;
+.profile-box {
+  border: solid black 2px;
+  background: coral;
   height: 50%;
 }
