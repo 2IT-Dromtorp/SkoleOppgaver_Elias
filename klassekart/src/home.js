@@ -1,61 +1,64 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Elev from './Elev';
 
 export default function Home() {
+  const [shuffledNames, setShuffledNames] = useState([]);
+  const [isRandomized, setIsRandomized] = useState(false);
 
-    return (
+  useEffect(() => {
+    const names = [
+      "Andreas", "Ahmad", "Philip", "Gabriel", "Theodor",
+      "Mattis", "Alva", "Silas", "Axel", "Vetle", "Kristoffer",
+      "Johannes", "Elias", "Matheo"
+    ];
 
-        <div className="container">
+    const shuffled = shuffleArray(names);
+    setShuffledNames(shuffled);
+  }, []);
 
-        <div className='leftside'>
+  function shuffleArray(array) {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  }
 
-            <div className='box'>
+  const toggleRandomizedOrder = () => {
+    setIsRandomized(!isRandomized);
+  };
 
-              <div className='sitteplasser'>
-                <Elev name="Andreas"/>
-                <Elev name="Ahmad"/>
-              </div>
+  const displayNames = isRandomized ? shuffledNames : [
+    "Andreas", "Ahmad", "Philip", "Gabriel", "Theodor",
+    "Mattis", "Alva", "Silas", "Axel", "Vetle", "Kristoffer",
+    "Johannes", "Elias", "Matheo"
+  ];
 
-              <div className='sitteplasser'> 
-                <Elev name="Philip"/>
-              </div>
-
-              <div className='sitteplasser'> 
-                <Elev name="Gabriel"/>
-                <Elev name="Theodor"/>
-              </div>
-
-            </div>
-          </div>
-            
-
-        <div className='rightside'>
-
+  return (
+    <div className="container">
+      <div className='leftside'>
         <div className='box'>
-
-            <div className='sitteplasser'> 
-                <Elev name="Mattis"/>
-                <Elev name="Alva"/>
-                <Elev name="Silas"/>
-              </div>
-
-            <div className='sitteplasser'> 
-                <Elev name="Axel"/>
-                <Elev name="Vetle"/>
-                <Elev name="Kristoffer"/>
-              </div>
-
-              <div className='sitteplasser'> 
-                <Elev name="Johannes"/>
-                <Elev name="Elias"/>
-                <Elev name="Matheo"/>
-              </div>
-            
-          </div>
-
-          </div>
-
-
+          {displayNames.slice(0, 5).map((name, index) => (
+            <div className='sitteplasser' key={index}>
+              <Elev name={name} />
+            </div>
+          ))}
         </div>
-    )
+      </div>
+      <div className='rightside'>
+        <div className='box'>
+          {displayNames.slice(5).map((name, index) => (
+            <div className='sitteplasser' key={index}>
+              <Elev name={name} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <button onClick={toggleRandomizedOrder}>
+        {isRandomized ? 'Show Original Order' : 'Randomize Order'}
+      </button>
+    </div>
+  );
 }
