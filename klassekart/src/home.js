@@ -40,15 +40,28 @@ export default function Home() {
     <div className="container">
       <div className='leftside'>
         <div className='box'>
-          {displayNames.slice(0, 5).map((name, index) => (
-            <div className='sitteplasser' key={index}>
-              <Elev name={name} />
+          {displayNames.slice(0, 2).map((name, index) => (
+            <div className='bakerste-rad' key={index}>
+              <Elev name={name} />  
             </div>
           ))}
+             {displayNames.slice(2, 3).map((name, index) => (
+              <div className='midterste-rad' key={index}>
+               <div className='sitteplasser'></div>
+                <Elev name={name}/>
+               </div>
+                ))}
+                {displayNames.slice(3, 5).map((name, index) => (
+                  <div className='forreste-rad' key={index}> 
+            <div className='sitteplasser'> 
+              <Elev name={name} />  
+            </div> 
         </div>
+        ))}
       </div>
-      <div className='rightside'>
-        <div className='box'>
+    </div>
+    <div className='rightside'>
+        <div className='profilebox'>
           {displayNames.slice(5).map((name, index) => (
             <div className='sitteplasser' key={index}>
               <Elev name={name} />
@@ -56,9 +69,9 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <button onClick={toggleRandomizedOrder}>
+    <button onClick={toggleRandomizedOrder}>
         {isRandomized ? 'Show Original Order' : 'Randomize Order'}
       </button>
-    </div>
+  </div>
   );
 }
