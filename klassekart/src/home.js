@@ -49,6 +49,7 @@ export default function Home() {
               <div className='midterste-rad' key={index}>
                <div className='sitteplasser'></div>
                 <Elev name={name}/>
+                <div className='philip-venn'>test</div>
                </div>
                 ))}
                 {displayNames.slice(3, 5).map((name, index) => (
