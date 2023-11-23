@@ -1,0 +1,97 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  height: 15%;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 1px 10px 1px #000000;
+  z-index: 1000;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.overste-bar {
+  height: 20%;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+}
+
+.App-body {
+  height: 100vh;
+  width: 100%;
+  border: solid 1px red;
+  box-sizing: border-box;
+}
+
+.hoyreluftboks {
+  width: 80%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.infolist {
+  display: flex;
+  flex-direction: row ;
+  font-size: auto;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+.info-forelder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 33%;
+  border-bottom: solid 1px black;
+}
+
+.over-forelder {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
+}
+
+.inner-body {
+  height: 100%;
+  width: 100%;
+}
