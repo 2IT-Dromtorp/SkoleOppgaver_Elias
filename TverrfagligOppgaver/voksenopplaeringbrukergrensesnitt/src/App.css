@@ -185,3 +185,183 @@ img {
   background-repeat: repeat-y;
   background-attachment: scroll;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.body {
+  background-color: whitesmoke;
+}
+ 
+h3 {
+ text-shadow: white 5px;
+}
+ 
+ 
+.App {
+  text-align: center;
+}
+ 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+ 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+ 
+.top-bar {
+  background-color: #3498DB;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+ 
+.logo {
+  max-width: 175px;
+  max-height: 75px;
+}
+ 
+.logo-image {
+  width: 100%;
+  height: auto;
+}
+ 
+.login {
+  max-width: 130px;
+  max-height: 20px;
+ 
+}
+ 
+.login-image {
+  width: 5%;
+  height: auto;
+  position: absolute;
+top: 0;
+bottom: 0;
+right: 0;
+}
+ 
+ 
+ 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+  color: black;
+}
+ 
+.popup-content {
+  background: white;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: solid 1px;
+}
+ 
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+ 
+ 
+.boxes-container {
+  flex-direction: row;
+  justify-content: center;
+}
+ 
+.box1 {
+  width: 275px;
+  height: 175px;
+  padding: 10px;
+  border-radius: 15px;
+ text-align: center;
+ background-image: url(https://helpdeskgeek.com/wp-content/pictures/2021/09/3-retro-gaming-PC.jpg);
+background-size: cover;
+color: black;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+ 
+.box2 {
+  width: 275px;
+  height: 175px;
+  padding: 10px;
+  border-radius: 15px;
+ text-align: center;
+ background-image: url(https://media.snl.no/media/8374/standard_norges_flagg.png);
+background-size: cover;
+color: black;
+  border: 1px solid black;
+  margin: 0;
+}
+ 
+.box3 {
+  width: 275px;
+  height: 175px;
+  padding: 10px;
+  border-radius: 15px;
+ text-align: center;
+ background-image: url(https://media.istockphoto.com/id/1215986146/photo/happy-senior-couple-talking-while-cooking-and-using-touchpad-in-the-kitchen.jpg?s=612x612&w=0&k=20&c=C8RdXSlEjh2XtgJxE5m2jYDbiWkbhHuAKNbyzPmzF5M=);
+background-size: cover;
+color: black;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+ 
+.box4 {
+ 
+  width: 275px;
+  height: 175px;
+  padding: 10px;
+  border-radius: 15px;
+ text-align: center;
+ background-image: url(https://everbrookseniorliving.com/media/k2/items/cache/184b7cb84d7b456c96a0bdfbbeaa5f14_XL.jpg);
+background-size: cover;
+color: black;
+  border: 1px solid black;
+  margin: 0;
+}
+ 
+.boxrow1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+  margin-bottom: 10px;
+ 
+}
+ 
+.boxrow2 {
+  display: flex;
+  justify-content: center;
+}
