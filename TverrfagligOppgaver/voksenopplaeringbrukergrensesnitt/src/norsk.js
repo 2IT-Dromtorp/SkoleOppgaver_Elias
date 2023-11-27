@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import {Penis} from './appBody.js';
 
 export default function Norsk()  {
-    const {0: showPopup} = useContext(Penis);
+    const {1: showPopup} = useContext(Penis);
     return(
         <div className='Norsk'>
         <h1>Norsk</h1>

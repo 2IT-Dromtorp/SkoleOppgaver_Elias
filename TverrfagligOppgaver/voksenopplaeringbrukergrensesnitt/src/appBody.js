@@ -52,7 +52,7 @@ export default function AppBody() {
     return (
      <div className='App-body'>
         <div className='background-image'></div>
-        <div style={{zIndex: 1000}}>
+        <div style={{zIndex: 69420}}>
     
                 {isBox1PopupVisible && (
                     <Popup onClose={closePopup} content={

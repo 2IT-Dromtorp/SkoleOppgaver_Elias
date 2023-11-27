@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import {Penis} from './appBody.js';
 
 export default function KroppsOving() {
-    const {0: showPopup} = useContext(Penis);
+    const {3: showPopup} = useContext(Penis);
     return(
         <div className="kroppsOving">
             <h1>KroppsØving</h1>
