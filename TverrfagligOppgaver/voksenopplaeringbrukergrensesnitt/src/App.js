@@ -1,7 +1,8 @@
 import './App.css';
 import AppBody from './appBody.js';
 import Navbar from './navbar.js';
-import Login from './login.js'
+import LoginRound from './loginRound.js'
+import Signup from './Signup.js'
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,8 +10,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-      <Route path="/" element={<AppBody/>}/>
-      <Route path="/login" element={<Login/>}/>
+      <Route index element={<AppBody/>}/>
+      <Route path="/Login" element={<LoginRound/>}/>
+      <Route path="/Signup" element={<Signup/>}/>
       </Routes>
     </div>
   );
