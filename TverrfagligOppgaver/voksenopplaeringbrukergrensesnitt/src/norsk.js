@@ -1,10 +1,10 @@
 import './App.css';
 import norsk from './bilder/books.png';
 import { useContext } from 'react';
-import {Penis} from './appBody.js';
+import {PopupContext} from './appBody.js';
 
 export default function Norsk()  {
-    const {1: showPopup} = useContext(Penis);
+    const {1: showPopup} = useContext(PopupContext);
     return(
         <div className='Norsk'>
         <h1>Norsk</h1>

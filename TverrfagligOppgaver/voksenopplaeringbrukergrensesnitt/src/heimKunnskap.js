@@ -1,10 +1,10 @@
 import './App.css';
 import matOgHelse from './bilder/mat.jpg';
 import { useContext } from 'react';
-import {Penis} from './appBody.js';
+import {PopupContext} from './appBody.js';
 
 export default function HeimKunnskap() {
-    const {2: showPopup} = useContext(Penis);
+    const {2: showPopup} = useContext(PopupContext);
     return (
         <div className="heimkunnskap">
                 <h1>Heimkunnskap</h1>

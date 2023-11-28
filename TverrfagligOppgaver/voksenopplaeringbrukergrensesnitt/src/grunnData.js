@@ -1,10 +1,10 @@
 import './App.css';
 import data from './bilder/Data.jpg';
-import {Penis} from './appBody.js';
+import {PopupContext} from './appBody.js';
 import { useContext } from 'react';
 
 export default function GrunnData() {
-    const {0: showPopup} = useContext(Penis);
+    const {0: showPopup} = useContext(PopupContext);
     return (
         <div className='GD'>
             <h1>Grunnleggende Datakunnskap</h1>

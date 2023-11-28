@@ -1,10 +1,10 @@
 import './App.css';
 import kroppsOving from './bilder/Fussball.png';
 import { useContext } from 'react';
-import {Penis} from './appBody.js';
+import {PopupContext} from './appBody.js';
 
 export default function KroppsOving() {
-    const {3: showPopup} = useContext(Penis);
+    const {3: showPopup} = useContext(PopupContext);
     return(
         <div className="kroppsOving">
             <h1>KroppsØving</h1>

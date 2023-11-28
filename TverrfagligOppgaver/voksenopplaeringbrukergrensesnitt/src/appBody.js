@@ -4,13 +4,12 @@ import Norsk from './norsk'
 import HeimKunnskap from './heimKunnskap'
 import KroppsOving from './kroppsOving'
 import Luft from './luft.js'
-import bakgrunn from './bilder/nordre_follo_kommune_cover.jpg'
 import { createContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Popup from './popUp.js';
 
 
-export const Penis = createContext();
+export const PopupContext = createContext();
 export default function AppBody() {
         const [isBox1PopupVisible, setIsBox1PopupVisible] = useState(false);
         const [isBox2PopupVisible, setIsBox2PopupVisible] = useState(false);
@@ -52,7 +51,7 @@ export default function AppBody() {
     return (
      <div className='App-body'>
         <div className='background-image'></div>
-        <div style={{zIndex: 69420}}>
+        <div style={{zIndex: 401}}>
     
                 {isBox1PopupVisible && (
                     <Popup onClose={closePopup} content={
@@ -89,7 +88,7 @@ export default function AppBody() {
                 )}
             </div>
         <div className='inner-body'>
-            <Penis.Provider value={[setIsBox1PopupVisible, setIsBox2PopupVisible, setIsBox3PopupVisible, setIsBox4PopupVisible]}>
+            <PopupContext.Provider value={[setIsBox1PopupVisible, setIsBox2PopupVisible, setIsBox3PopupVisible, setIsBox4PopupVisible]}>
             <Luft />
             <GrunnData />
             <Luft />
@@ -98,7 +97,7 @@ export default function AppBody() {
             <HeimKunnskap />
             <Luft />
             <KroppsOving />
-            </Penis.Provider>
+            </PopupContext.Provider>
         </div>
      </div>
     )
