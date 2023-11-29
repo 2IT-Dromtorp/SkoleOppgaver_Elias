@@ -1,7 +1,7 @@
-import './App.css';
-import matOgHelse from './bilder/mat.jpg';
+import '.././App.css';
+import matOgHelse from '.././bilder/1667987.svg';
 import { useContext } from 'react';
-import {PopupContext} from './appBody.js';
+import {PopupContext} from '../appBody.js';
 
 export default function HeimKunnskap() {
     const {2: showPopup} = useContext(PopupContext);

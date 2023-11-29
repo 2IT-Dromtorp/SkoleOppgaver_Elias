@@ -1,8 +1,8 @@
 import './App.css'
-import GrunnData from './grunnData'
-import Norsk from './norsk'
-import HeimKunnskap from './heimKunnskap'
-import KroppsOving from './kroppsOving'
+import GrunnData from './cards/grunnData.js'
+import Norsk from './cards/norsk.js'
+import HeimKunnskap from './cards/heimKunnskap.js'
+import KroppsOving from './cards/kroppsOving.js'
 import Luft from './luft.js'
 import { createContext, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -95,14 +95,14 @@ export default function AppBody() {
             </div>
         <div className='inner-body'>
             <PopupContext.Provider value={[setIsBox1PopupVisible, setIsBox2PopupVisible, setIsBox3PopupVisible, setIsBox4PopupVisible]}>
-            <Luft />
-            <GrunnData />
-            <Luft />
-            <Norsk />
-            <Luft />
-            <HeimKunnskap />
-            <Luft />
-            <KroppsOving />
+            <div className='over-body'> 
+                 <GrunnData />
+                 <Norsk />
+            </div>
+            <div className='under-body'> 
+                <HeimKunnskap />
+                <KroppsOving />
+            </div>
             </PopupContext.Provider>
         </div>
      </div>

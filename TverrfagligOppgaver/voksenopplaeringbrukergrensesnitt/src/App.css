@@ -82,11 +82,11 @@ ul {
 }
 
 .inner-body {
-  height: 100%;
-  width: 30%;
+  height: 800px;
+  width: 70%;
   border: blue 1px solid;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: column;
 }
 
@@ -98,10 +98,39 @@ ul {
   /* border: 1px solid red; */
   height: 290px;
   z-index: 400;
-  background-color: white;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
   box-shadow: 2px 2px 10px 2px black;
   text-align: center;
   border-radius: 10px;
+  width: 30%;
+}
+
+.lesMerIkon {
+  width: 40px;
+  height: 40px;
+}
+
+.lesMerIkon.hover {
+  opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .Norsk {
@@ -110,16 +139,34 @@ ul {
   align-items: center;
   justify-content: center;
   /* border: 1px solid red; */
-  height: 100%;
-  box-shadow: 2px 2px 10px 2px black;
+  height: 290px;
   z-index: 400;
-  background-color: white;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+  box-shadow: 2px 2px 10px 2px black;
+  text-align: center;
   border-radius: 10px;
+  width: 30%;
 }
 
 img {
   width: 50%;
   height: 50%;
+}
+
+.over-body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  justify-content: space-evenly;
+}
+
+.under-body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  justify-content: space-evenly;
 }
 
 .heimkunnskap {
@@ -128,11 +175,13 @@ img {
   align-items: center;
   justify-content: center;
   /* border: 1px solid red; */
-  height: 100%;
-  box-shadow: 2px 2px 10px 2px black;
+  height: 290px;
   z-index: 400;
-  background-color: white;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+  box-shadow: 2px 2px 10px 2px black;
+  text-align: center;
   border-radius: 10px;
+  width: 30%;
 }
 
 .kroppsOving {
@@ -141,16 +190,22 @@ img {
   align-items: center;
   justify-content: center;
   /* border: 1px solid red; */
-  height: 100%;
-  box-shadow: 2px 2px 10px 2px black;
+  height: 290px;
   z-index: 400;
-  background-color: white;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+  box-shadow: 2px 2px 10px 2px black;
+  text-align: center;
   border-radius: 10px;
+  width: 30%;
 }
 
 .LesMer {
   width: 30%;
   height: 30px;
+  color: white;
+  background-color: purple;
+  box-shadow: 2px 2px 10px 2px black;
+  font-size: large;
 }
 
 .luft {
@@ -182,7 +237,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 275vh;
+  height: 100%;
   background-color: #546672;
 }
 
@@ -308,6 +363,9 @@ h3 {
   width: 450px;
   background-color: white;
   box-shadow: 2px 2px 10px 2px black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
 }
 
 .login-labels {
@@ -343,4 +401,9 @@ h3 {
 .green-button {
   border: black 1px solid;
   color: green;
+}
+
+.text-danger {
+  font-size: small;
+  margin: 1px;
 }

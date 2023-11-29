@@ -7,8 +7,8 @@ import axios from 'axios';
 
 export default function Login() {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
     const history = useNavigate();
     const [values, setValues] = useState({
         email: '',
@@ -72,10 +72,11 @@ export default function Login() {
                         placeholder='Your password here'
                         required={true}
                     />
-                    <br></br>
+
                        <span>{errors.password && <p className='text-danger'>{errors.password}</p>}</span>
+                    <br></br>
                     <button type="submit" onClick={handleSubmit} className='sign-in-but' >Logg inn</button>
-                    <br></br><br></br>
+                    <br></br>
                     <Link to='/Signup' className='login-2'>Registrer deg</Link>
                 </div>
                 </form>

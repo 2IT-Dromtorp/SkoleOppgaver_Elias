@@ -1,7 +1,7 @@
-import './App.css';
-import norsk from './bilder/books.png';
+import '.././App.css';
+import norsk from '.././bilder/books-2022463.svg';
 import { useContext } from 'react';
-import {PopupContext} from './appBody.js';
+import {PopupContext} from '../appBody.js';
 
 export default function Norsk()  {
     const {1: showPopup} = useContext(PopupContext);

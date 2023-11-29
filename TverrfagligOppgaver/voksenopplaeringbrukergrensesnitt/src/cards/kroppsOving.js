@@ -1,7 +1,7 @@
-import './App.css';
-import kroppsOving from './bilder/Fussball.png';
+import '.././App.css';
+import kroppsOving from '.././bilder/25777.svg';
 import { useContext } from 'react';
-import {PopupContext} from './appBody.js';
+import {PopupContext} from '../appBody.js';
 
 export default function KroppsOving() {
     const {3: showPopup} = useContext(PopupContext);
