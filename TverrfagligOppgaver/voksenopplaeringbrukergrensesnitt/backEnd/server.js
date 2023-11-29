@@ -7,20 +7,23 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  user: 'root',
+  user: 'vsc',
   host: 'localhost',
-  password: 'password',
+  password: 'tullerusk91',
   database: 'voksenopplaering',
 });
 
 app.post('/signup', (req, res) => {
-  const sql = "INSERT INTO login (`name`, `email`, `password`) VALUES (?)";
+  console.log(req.body)
+  const sql = "INSERT INTO login (`navn`, `email`, `password`) VALUES (?, ?, ?)";
   const values = [req.body.navn, req.body.email, req.body.password];
 
-  db.query(sql, [values], (err, data) => {
+  db.query(sql, values, (err, data) => {
     if (err) {
+      console.log(err);
       return res.json({ status: 400, error: err });
     } else {
+      console.log(data);
       return res.json({ status: 200, data: data });
     }
   });
@@ -35,7 +38,7 @@ app.post('/login', (req, res) => {
             return res.json({ status: 400, error: err });
           } 
           if(data.length > 0){
-            return res.json( true );
+            return res.json({ status: 200, data: data} );
           } else {
             return res.json({ status: 400, data: data });
           }

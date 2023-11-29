@@ -271,6 +271,16 @@ h3 {
   color: black;
 }
 
+.login-2 {
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+}
+
+.login-2:hover {
+  color:hotpink;
+}
+
 .login:hover {
   color: gray;
 }
@@ -305,4 +315,32 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-pass-label {
+  width: 40%;
+  height: 30px;
+  border: none;
+  border-bottom: black 1px solid;
+}
+
+.user-pass-label:focus {
+  outline: none;
+}
+
+.grey-button {
+  border: black 1px solid;
+  color: grey;
+  background-color: lightblue;
+}
+
+.green-button {
+  border: black 1px solid;
+  color: green;
 }

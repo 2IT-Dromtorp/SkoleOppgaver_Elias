@@ -3,6 +3,8 @@ import Skjold from './bilder/dromtorp-videregaende-skole.svg';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() { 
+
+
     return(
     <div className="App-header">
     <div className='over-forelder'>
@@ -26,9 +28,11 @@ export default function Navbar() {
           <li>For elever</li>
           <li>Om skolen</li>
           <li>Kontakt oss</li>
+          {
           <Link to={"/login"} className='login'>
           <li>Logg inn</li>
           </Link>
+          }
           <li>Søk</li>
         </ul>
     </div>
