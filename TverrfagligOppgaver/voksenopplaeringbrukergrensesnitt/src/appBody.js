@@ -62,7 +62,7 @@ export default function AppBody() {
                 {isBox1PopupVisible && (
                     <Popup onClose={closePopup} content={
                         <div>
-                            <h1>Grunlegende Data kunskap</h1>
+                            <h1>Grunnlegende Data kunskap</h1>
                             <p>Dette grunnleggende datakunnskapskurset er skreddersydd for voksne i alderen 40 til 60 år og gir en introduksjon til digitale ferdigheter. Deltakerne lærer grunnleggende om datamaskinbruk, filbehandling, internett og e-post. Kurset fokuserer på å bygge tillit og kompetanse innenfor digitale verktøy, slik at deltakerne kan navigere i den moderne teknologiens verden. Med en pedagogisk tilnærming legger kurset til rette for en jevn læringsprosess og gir deltakerne nødvendige ferdigheter for å trives i dagens digitale samfunn.</p>
                             <button className="gray-button" onClick={handleButtonClick}>Meld deg på</button>
                         </div>

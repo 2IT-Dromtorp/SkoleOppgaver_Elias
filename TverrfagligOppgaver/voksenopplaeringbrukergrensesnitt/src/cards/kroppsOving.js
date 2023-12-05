@@ -7,7 +7,7 @@ export default function KroppsOving() {
     const {3: showPopup} = useContext(PopupContext);
     return(
         <div className="kroppsOving">
-            <h1>KroppsØving</h1>
+            <h1>Kropps Øving</h1>
             <img src={kroppsOving} className="Fotball" alt="Fotball" />
             <button className='LesMer' onClick={() => {
             showPopup(true)

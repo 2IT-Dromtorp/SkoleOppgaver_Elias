@@ -75,7 +75,7 @@ export default function Signup() {
                   />
                   <br></br>
                   <span>{errors.password && <p className='text-danger'>{errors.password}</p>}</span>
-                  <button type="submit">Logg inn</button>
+                  <button type="submit" className='LesMer'>Logg inn</button>
                   <br></br>
                   <Link to='/login' className='login-2'>Login</Link>
                 </div>

@@ -11,12 +11,12 @@ export default function GrunnData() {
         <div className='GD'>
             <h1>Grunnleggende Datakunnskap</h1>
             <img className='Data' src={data} alt='Bildet av en datamaskin'></img>
-            <img className='lesMerIkon' src={LesMer} onClick={() => {
+            {/* <img className='lesMerIkon' src={LesMer} onClick={() => {
                 showPopup(true)
-            }}></img>
-            {/* <button className='LesMer' onClick={() => {
+            }}></img> */}
+            <button className='LesMer' onClick={() => {
             showPopup(true)
-        }}>Les mer</button> */}
+        }}>Les mer</button>
         </div>
     );
 };

@@ -28,7 +28,7 @@ export default function Login() {
               .then((res) => {
                 console.log(res);
                 if (res.status === 200) {
-                  history('/home');
+                  history('/');
                 } else {
                     alert('Bruker finnes ikke');
                 }
@@ -75,7 +75,7 @@ export default function Login() {
 
                        <span>{errors.password && <p className='text-danger'>{errors.password}</p>}</span>
                     <br></br>
-                    <button type="submit" onClick={handleSubmit} className='sign-in-but' >Logg inn</button>
+                    <button type="submit" onClick={handleSubmit} className='LesMer' >Logg inn</button>
                     <br></br>
                     <Link to='/Signup' className='login-2'>Registrer deg</Link>
                 </div>
