@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.navbar {
+  border: black 1px solid;
+  display: flex;
+  height: 20vh;
+  justify-content: space-evenly;
+}
+
+.navbar-knapper {
+  border: red 1px solid;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+}
