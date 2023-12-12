@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black 1px solid;
+    width: 4%;
+    height: 100vh;
+    background-color: #242526;
+}
+
+.logo {
+    width: 100%;
+    border: red 1px solid;
+    height: 9%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.links {
+    width: 100%;
+    height: 100%;
+    border: blue 1px solid;
+}
+
+.tickets {
+    width: 100%;
+    height: 10%;
+    border: 1px solid pink;
+}

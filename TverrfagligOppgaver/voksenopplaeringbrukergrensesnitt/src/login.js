@@ -75,7 +75,7 @@ export default function Login() {
 
                        <span>{errors.password && <p className='text-danger'>{errors.password}</p>}</span>
                     <br></br>
-                    <button type="submit" onClick={handleSubmit} className='LesMer' >Logg inn</button>
+                    <button type="submit" onClick={handleSubmit} className='LesMer' >Registrer deg</button>
                     <br></br>
                     <Link to='/Signup' className='login-2'>Registrer deg</Link>
                 </div>

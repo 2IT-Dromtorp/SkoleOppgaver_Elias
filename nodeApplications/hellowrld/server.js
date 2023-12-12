@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3305
 var mysql = require('mysql');
+const cors = require('cors')
+
+app.use(cors())
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -37,8 +40,6 @@ app.get('/updateuser/:newhobby/:id', (req, res) => {
   let id = req.params.id;
   let sqlquery = 'UPDATE elev SET hobby = ? WHERE ElevID = ?'
 
-  // newhobby = 'new hobby value';
-  // console.log(newhobby);
 
   connection.query(sqlquery, [newhobby, id], function (error, results, fields) {
     if (error) throw error;
@@ -47,6 +48,22 @@ app.get('/updateuser/:newhobby/:id', (req, res) => {
   });
 
   res.send('PUT is');
+});
+
+
+app.post('/Select', (req, res) => {
+  const sql = 'SELECT * FROM elev';
+
+  connection.query(sql, (error, results, fields) => {
+    if (error) {
+      return res.json({ status: 400, error: error });
+    }
+    if(results.length > 0){
+      return res.json({ status: 200, data: results, message: 'data found' });
+    } else {
+      return res.json({ status: 400, data: results, message: 'data not found' });
+    }
+  }); 
 });
 
 

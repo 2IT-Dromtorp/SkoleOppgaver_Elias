@@ -1,0 +1,9 @@
+create ticket- ny side
+sidelengs navbar - lite innhold
+set content*
+lysere farge på create
+form for json fil
+text area
+button hover
+autocomplete off
+list.push

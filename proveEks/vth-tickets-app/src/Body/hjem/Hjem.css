@@ -1,0 +1,22 @@
+.body {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+}
+
+.overSkrift{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    border: red 1px solid;
+    display: flex;
+}
+
+.contentLinjer {
+    width: 100%;
+    height: 90%;
+    border: blue 1px solid;
+    overflow-y: auto;
+}
