@@ -6,4 +6,13 @@ form for json fil
 text area
 button hover
 autocomplete off
-list.push
+list.push*
+
+'
+må gjøre
+array into row
+fikse css :sobbing:
+
+
+extra:
+automatisk tid?

@@ -1,19 +1,22 @@
-import './Body.css'
+import './Body.css';
 import CreateTicket from './CreateTicket/CreateTicket.js';
 import Hjem from './hjem/Hjem.js';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { HjemContext, styleContext } from '../context.js';
 
 export default function Body() {
-
-    const [content, setContent] = useState(<Hjem />)
+    const { content, setContent } = useContext(HjemContext);
+    const { style, setStyle } = useContext(styleContext);
 
     function HjemChange() {
         setContent(<Hjem />);
-        console.log('changed')
+        setStyle("HjemElement");
+        console.log('changed');
     }
 
     function CTicketChange() {
         setContent(<CreateTicket />);
+        setStyle("CreateTicketElement");
     }
 
     return (
@@ -21,12 +24,11 @@ export default function Body() {
             <div className='CreateTicket'>
                 <button className='createButton' onClick={CTicketChange}>Create Ticket</button>
             </div>
-            <div className='element-parent'>
+            <div className={style}>
                 <div className='changable-Element'>
                     {content}
                 </div>
             </div>
         </div>
-
-        )
+    )
 }

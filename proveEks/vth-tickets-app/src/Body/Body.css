@@ -1,9 +1,11 @@
 .body{
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     border: black 1px solid;
+    justify-content: center;
+    align-items: center;
 }
 
 .CreateTicket{  
@@ -29,6 +31,24 @@
 .element-parent {
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.HjemElement {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.CreateTicketElement {
+    height: 100%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
