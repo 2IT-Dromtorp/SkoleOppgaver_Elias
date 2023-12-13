@@ -5,7 +5,7 @@
     border: black 1px solid;
     width: 4%;
     height: 100vh;
-    background-color: #242526;
+    background-color: #0d85d8;
 }
 
 .logo {
@@ -29,3 +29,8 @@
     height: 10%;
     border: 1px solid pink;
 }
+
+.tickets:hover{
+    background-color: #1ca3de;
+}
+

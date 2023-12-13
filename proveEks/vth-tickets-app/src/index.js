@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { HjemProvider, StyleProvider } from './context.js';
+import { HjemProvider, StyleProvider, PilNedProvider } from './context.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HjemProvider>
     <StyleProvider>
-    <App />
+      <PilNedProvider>
+        <App />
+      </PilNedProvider>
     </StyleProvider>
   </HjemProvider>
 );

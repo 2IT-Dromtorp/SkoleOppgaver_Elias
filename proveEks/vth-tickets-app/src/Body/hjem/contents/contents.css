@@ -1,0 +1,53 @@
+.contentWrapper{
+        width: 100%;
+        height: 100%;
+        /* border: blue 1px solid; */
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+.contents {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        border: black 1px solid;
+        width: 95%;
+        height: 80px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .doneCheckbox {
+        width: 3%;
+    }
+    
+    .problemText {
+        width: 55%;
+        margin-left: 20px;
+        text-wrap: wrap;
+        overflow-wrap: normal;
+    }
+    
+    .priorityText {
+        width: 10%;
+        margin-left: 10px;
+        font-weight: bolder;
+        font-size: large;
+    }
+    
+    .merInfoPil {
+        width: 10%;
+        height: 100%;
+        padding-left: 85px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pilNed{
+        width: 50%;
+        height: 50%;
+    }

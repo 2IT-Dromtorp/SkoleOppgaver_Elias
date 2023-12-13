@@ -21,4 +21,15 @@ const StyleProvider = ({ children }) => {
         )
 }
  
-export { HjemContext, HjemProvider, styleContext, StyleProvider };
+
+const PilNedContext = createContext({});
+const PilNedProvider = ({ children }) => {
+    const [pilNed , setPilNed] = useState('');
+    return (
+        <PilNedContext.Provider value={{pilNed, setPilNed}}>
+            {children}
+        </PilNedContext.Provider>
+    )
+}
+
+export { HjemContext, HjemProvider, styleContext, StyleProvider, PilNedContext, PilNedProvider };

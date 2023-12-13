@@ -1,6 +1,6 @@
 .createTicket {
         display: flex;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         height: 100%;
         flex-direction: column;
         align-items: center;
@@ -15,4 +15,37 @@ textarea {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+        font-weight: bold;
+}
+      
+.fiksBoks{
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+}
+      
+textarea {
+        resize: vertical;
+}
+      
+input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+}
+      
+input[type="submit"]:hover {
+        background-color: #45a049;
 }
