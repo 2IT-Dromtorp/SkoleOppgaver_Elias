@@ -24,7 +24,7 @@ const StyleProvider = ({ children }) => {
 
 const PilNedContext = createContext({});
 const PilNedProvider = ({ children }) => {
-    const [pilNed , setPilNed] = useState('');
+    const [pilNed , setPilNed] = useState('idk');
     return (
         <PilNedContext.Provider value={{pilNed, setPilNed}}>
             {children}

@@ -8,7 +8,7 @@ export default function Contents() {
         const { PilNed, setPilNed } = useContext(PilNedContext)
 
         function changePilNed() {
-                setPilNed('pilNed')
+                setPilNed("pilNed")
                 console.log('idk')
         }
 
@@ -28,7 +28,7 @@ export default function Contents() {
                         <div className='merInfoPil' onClick={changePilNed}>
                                 <img src={pilNed} alt="pilNed" className='pilNed'/>
                         </div>
-                        <div className=''></div>
+                        <div className={PilNed}>{PilNed}</div>
                 </div>
         )
 }
