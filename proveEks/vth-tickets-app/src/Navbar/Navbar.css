@@ -34,3 +34,14 @@
     background-color: #1ca3de;
 }
 
+.kontaktInfo{
+    width: 100%;
+    border: pink 1px solid;
+    height: 10%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+

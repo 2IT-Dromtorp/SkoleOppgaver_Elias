@@ -3,17 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { HjemProvider, StyleProvider, PilNedProvider } from './context.js';
+import { HjemProvider, StyleProvider, PilNedProvider, OpenedContentProvider, TicketProvider, InfoProvider } from './context.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HjemProvider>
-    <StyleProvider>
-      <PilNedProvider>
-        <App />
-      </PilNedProvider>
-    </StyleProvider>
-  </HjemProvider>
+  <InfoProvider>
+    <TicketProvider>
+    <OpenedContentProvider>
+      <HjemProvider>
+        <StyleProvider>
+            <PilNedProvider>
+             <App />
+            </PilNedProvider>
+          </StyleProvider>
+      </HjemProvider>
+      </OpenedContentProvider>
+    </TicketProvider>
+  </InfoProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
