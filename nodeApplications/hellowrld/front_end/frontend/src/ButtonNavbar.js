@@ -9,10 +9,10 @@ const ButtonNavbar = () => {
   const { 1: setButton } = useActiveButtonContext();
 
   const buttons = [
-    { label: 'Button 1', content: <Button1Content /> },
-    { label: 'Button 2', content: <Button2Content /> },
-    { label: 'Button 3', content: <Button3Content /> },
-    { label: 'Button 4', content: <Button4Content /> },
+    { label: 'Select', content: <Button1Content /> },
+    { label: 'Update', content: <Button2Content /> },
+    { label: 'Insert', content: <Button3Content /> },
+    { label: 'Delete', content: <Button4Content /> },
   ];
 
   return (

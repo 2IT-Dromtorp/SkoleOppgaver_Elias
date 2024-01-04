@@ -44,7 +44,7 @@ export default function CreateTicket({ onSubmit }) {
                 <input type='text' id='navn' placeholder='Fornavn, Etternavn' required autoComplete='off' value={name} onChange={e => setName(e.target.value)} className='fiksBoks'/>
                 <label htmlFor='viktighet'>Alvorlighetsgrad:</label><br />
                 <select id='viktighet' required value={severity} onChange={e => setSeverity(e.target.value)} className='fiksBoks'>
-                    <option value='høy'>Høy</option>
+                    <option value='hoy'>Høy</option>
                     <option value='middels'>Middels</option>
                     <option value='lav'>Lav</option>
                 </select>
