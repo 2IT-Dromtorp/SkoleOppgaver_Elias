@@ -5,6 +5,7 @@ var mysql = require('mysql');
 const cors = require('cors')
 
 app.use(cors())
+app.use(express.json());
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -25,7 +26,7 @@ connection.connect(function(err) {
 });
 
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   
   connection.query('SELECT * FROM elev', function (error, results, fields) {
     if (error) throw error;
@@ -35,23 +36,25 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/updateuser/:newhobby/:id', (req, res) => {
-  let newhobby = req.params.newhobby;
+app.put('/updateuser/:navn/:verdi/:id', async (req, res) => {
+  let navn = req.params.navn;
+  let verdi = req.params.verdi;
   let id = req.params.id;
-  let sqlquery = 'UPDATE elev SET hobby = ? WHERE ElevID = ?'
+
+  console.log(navn, verdi, id, req.params)
+
+  let sqlquery = `UPDATE elev SET ${navn} = ? WHERE ElevID = ?`
 
 
-  connection.query(sqlquery, [newhobby, id], function (error, results, fields) {
+  connection.query(sqlquery, [verdi, id], function (error, results, fields) {
     if (error) throw error;
     console.log('The solution is: ', results);
     res.send(JSON.stringify(results));
   });
-
-  res.send('PUT is');
 });
 
 
-app.post('/Select', (req, res) => {
+app.post('/Select', async (req, res) => {
   const sql = 'SELECT * FROM elev';
 
   connection.query(sql, (error, results, fields) => {
@@ -65,6 +68,14 @@ app.post('/Select', (req, res) => {
     }
   }); 
 });
+
+app.post('/insertsql', async (req, res) => {
+console.log("finnes body?!?!?!?!?!?", req)
+  connection.query(`INSERT INTO elev (ElevID, Fornavn, Etternavn, Klasse, Hobby, Kjonn, DatamaskinID) VALUES (null,'${req.body.Fornavn}','${req.body.Etternavn}','${req.body.Klasse}','${req.body.Hobby}','${req.body.Kjonn}','${req.body.DatamaskinID}')`, function (err, result) {
+      if (err) throw err;
+      res.send()
+  })
+})
 
 
 app.listen(port, () => {

@@ -12,7 +12,7 @@ const ButtonNavbar = () => {
     { label: 'Select', content: <Button1Content /> },
     { label: 'Update', content: <Button2Content /> },
     { label: 'Insert', content: <Button3Content /> },
-    { label: 'Delete', content: <Button4Content /> },
+    // { label: 'Delete', content: <Button4Content /> },
   ];
 
   return (
