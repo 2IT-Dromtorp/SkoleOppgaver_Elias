@@ -24,7 +24,7 @@ export default function Signup() {
       
           if (errors.navn === '' && errors.email === '' && errors.password === '') {
             axios
-              .post('http://localhost:8081/signup', values)
+              .post('/signup', values)
               .then((res) => {
                 navigate('/login');
               })

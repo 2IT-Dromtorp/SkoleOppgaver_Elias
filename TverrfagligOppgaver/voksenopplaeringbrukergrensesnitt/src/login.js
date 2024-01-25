@@ -24,7 +24,7 @@ export default function Login() {
 
         if ( errors.email === '' && errors.password === '') {
             axios
-              .post('http://localhost:8081/login', values)
+              .post('/login', values)
               .then((res) => {
                 console.log(res);
                 if (res.status === 200) {
