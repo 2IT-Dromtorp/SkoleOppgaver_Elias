@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a27de6ae.css",
+    "main.js": "/static/js/main.3c6be458.js",
+    "static/js/787.018d50fc.chunk.js": "/static/js/787.018d50fc.chunk.js",
+    "static/media/books-2022463.svg": "/static/media/books-2022463.97779ea014194248e97658f647b68c05.svg",
+    "static/media/lesMer.png": "/static/media/lesMer.40ccaa3b05fc878f57d7.png",
+    "static/media/25777.svg": "/static/media/25777.90e9aa218ff764e4678031eef3ce2c03.svg",
+    "static/media/dromtorp-videregaende-skole.svg": "/static/media/dromtorp-videregaende-skole.101d8f7fade098d8ea63c1e22fc6deee.svg",
+    "static/media/1667987.svg": "/static/media/1667987.37e0434c1093c9754ae306b3c53c6253.svg",
+    "static/media/2237420.svg": "/static/media/2237420.69852a686b103cdcf31fc350691600a4.svg",
+    "index.html": "/index.html",
+    "main.a27de6ae.css.map": "/static/css/main.a27de6ae.css.map",
+    "main.3c6be458.js.map": "/static/js/main.3c6be458.js.map",
+    "787.018d50fc.chunk.js.map": "/static/js/787.018d50fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a27de6ae.css",
+    "static/js/main.3c6be458.js"
+  ]
+}
