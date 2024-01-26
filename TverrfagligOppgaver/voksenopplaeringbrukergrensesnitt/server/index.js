@@ -37,12 +37,12 @@ app.post('/login', (req, res) => {
       
         db.query(sql, [req.body.email, req.body.password], (err, data) => {
           if (err) {
-            return res.json({ status: 400, error: err });
+            res.status(500).send("SQL Database error");
           } 
           if(data.length > 0){
-            return res.json({ status: 200, data: data} );
+            res.status(200).send(data);
           } else {
-            return res.json({ status: 400, data: data });
+            res.status(404).send('User not found');
           }
         });
       });
