@@ -1,30 +1,45 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { Navigate, Route as ReactDOMRoute } from 'react-router-dom';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
+import TokenAuth from "./components/TokenAuth";
+import "./App.css";
+import { NowContext } from "./context";
+import { useEffect, useState } from "react";
+import socketIo from "socket.io-client";
+
+import MainPage from "./components/MainPage";
 
 const App = () => {
+  const [socket, setSocket] = useState();
+  useEffect(() => {
+    setSocket(
+      socketIo('/', {
+        path: "/socket",
+        transports: ["websocket"],
+        auth: {
+          token: "my-token",
+        },
+      })
+    );
+  }, []);
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-          </ul>
-        </nav>
-
+    <NowContext.Provider value={{ socket }}>
+      <Router>
         <Routes>
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signin" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/*" element={<Navigate to="/login" />} />
+          <Route path="/token" element={<TokenAuth />} />
+          <Route path="/mainpage" element={<MainPage />} />
+          <Route path="/*" element={<Navigate to="/signin" />} />
+          {/* <Route path="/*" element={<Navigate to="/signin" />} /> */}
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </NowContext.Provider>
   );
 };
 
