@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './loginside.css';
 import { Link } from 'react-router-dom';
@@ -21,10 +20,10 @@ export default function Login() {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.success) {
-          localStorage.setItem('user', JSON.stringify(data.user));
-          window.location.href = '/';
-          console.log(data.user);
+        if (data.token) { 
+          localStorage.setItem('accessToken', data.token); // Store the JWT token in local storage
+          window.location.href = '/loggedin';
+          console.log(data.token);
         } else {
           alert(data.message);
           console.log(data.message);
@@ -56,4 +55,3 @@ export default function Login() {
     </div>
   );
 }
-
