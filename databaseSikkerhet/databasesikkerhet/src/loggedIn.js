@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import DataTable from "./utlaanMap";
 
 
 export default function LoggedIn() {
@@ -16,7 +17,7 @@ export default function LoggedIn() {
             })
             if(response.status === 401) return window.location.href = "/";
             const data = await response.json();
-            setUsername(data.name);
+            setUsername(data.name); 
         }
         checkToken() 
     },[])
@@ -24,7 +25,12 @@ export default function LoggedIn() {
     return (
         <div className="loggedIn-container">
             <h1>Du er logget inn som {username} </h1> 
-            <Link to="/utlaanTabell">Logg ut</Link>
+            <Link to="/">Logg ut</Link>
+            <br />
+            <Link to="/laerer">Laerer?</Link>
+            <br />
+            <Link to="/pending">Pending?</Link>
+            <DataTable />
         </div>
     );
 }

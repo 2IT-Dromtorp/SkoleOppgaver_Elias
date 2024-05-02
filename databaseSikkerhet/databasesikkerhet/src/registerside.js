@@ -6,6 +6,9 @@ export default function RegisterSide() {
   const [password, setpassword] = useState("");
   const [passwordBekreftelse, setpasswordBekreftelse] = useState("");
   const [email, setEmail] = useState("");
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
+  const [phone, setPhone] = useState("");
   const [feilmelding, setFeilmelding] = useState("");
 
   const handleSubmit = (event) => {
@@ -25,7 +28,10 @@ export default function RegisterSide() {
         username,
         password,
         email,
-      }), //sender brukernavn, password og email til serveren
+        first_name,
+        last_name,
+        phone
+      }), //sender brukernavn, navnene, tlf, password og email til serveren
     })
   };
 
@@ -70,7 +76,34 @@ export default function RegisterSide() {
             onChange={(e) => setpasswordBekreftelse(e.target.value)}
           />
         </div>
-        <button type="submit">Registrer</button>
+        <div>
+        <label htmlFor="first_name">Fornavn:</label>
+          <input
+            type="text"
+            id="first_name"
+            value={first_name}
+            onChange={(e) => setFirst_name(e.target.value)}
+          />
+        </div>
+        <div>
+        <label htmlFor="last_name">Etternavn:</label>
+          <input
+            type="text"
+            id="last_name"
+            value={last_name}
+            onChange={(e) => setLast_name(e.target.value)}
+          />
+        </div>
+        <div>
+        <label htmlFor="phone">Telefon nr:</label>
+          <input
+            type="text"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+        <button type="submit" >Registrer</button>
       </form>
       <p>Har du allerede en bruker? <Link to="/">Klikk her</Link></p>
     </div>

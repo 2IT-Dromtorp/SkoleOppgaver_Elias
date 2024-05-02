@@ -7,6 +7,12 @@ export default function Login() {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
+    fetch('/api/laerer', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
     event.preventDefault();
     fetch('/api/login', {
       method: 'POST',
@@ -22,8 +28,9 @@ export default function Login() {
       .then((data) => {
         if (data.token) { 
           localStorage.setItem('accessToken', data.token); // Store the JWT token in local storage
+          console.log(data);
+          localStorage.setItem('rolle', data.user.laerer);
           window.location.href = '/loggedin';
-          console.log(data.token);
         } else {
           alert(data.message);
           console.log(data.message);

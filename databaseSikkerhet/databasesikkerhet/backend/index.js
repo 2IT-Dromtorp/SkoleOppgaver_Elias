@@ -26,13 +26,13 @@ conn.connect((err) => {
 })
 
 app.post('/api/register', (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password,first_name, last_name,  phone } = req.body;
 
     const hashedPassword = hash(password);
 
-    const server = [username, email, hashedPassword];
+    const server = [username, email, hashedPassword, first_name, last_name, phone];
 
-    const query = conn.query('INSERT INTO `users` (username, email, password) VALUES (?, ?, ?)', server, (err, result) => {
+    const query = conn.query('INSERT INTO `users` (username, email, password, first_name, last_name, phone) VALUES (?, ?, ?, ?, ?, ?)', server, (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).json({ error: 'Internal server error' });
@@ -88,6 +88,7 @@ function verifyToken(req, res, next) {
     })
 }
 
+
 app.get("/api/getname", verifyToken, (req, res) => {
     const a = req.jwtinfo;
     res.status(200).json({name: a.user.username});
@@ -97,10 +98,51 @@ app.get("/api/getname", verifyToken, (req, res) => {
 
 app.get('/api/utstyr',  verifyToken, (req, res) => {
     const a = req.jwtinfo;
-    const query = conn.query('SELECT * FROM `utstyr`', (err, result) => {
+    const query = conn.query('SELECT * FROM `equipment`', (err, result) => {
         if (err) {
             console.log(err)
         }
         res.json(result)
     })
+})
+
+app.put('/api/utlaant', verifyToken, (req, res) => {
+    const a = req.jwtinfo;
+    const { id, pending } = req.body;
+    const query = conn.query('UPDATE `equipment` SET pending = ? WHERE id = ?', [pending, id], (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+        res.json(result)
+    })
+})
+
+app.put ('/api/pending', verifyToken, (req, res) => {
+    const a = req.jwtinfo;
+    const { id, pending, available } = req.body;
+    const query = conn.query('UPDATE `equipment` SET pending = ?, available = ? WHERE id = ?', [pending, available, id], (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+        res.json(result)
+    })
+})
+
+app.get('/api/users',  verifyToken, (req, res) => {
+    const a = req.jwtinfo;
+    const query = conn.query('SELECT * FROM `users`', (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+        res.json(result)
+    })
+})
+app.get ('/api/laerer',  (req, res) => {
+    const {laerer} = req.body;
+    const query = conn.query('SELECT (laerer) FROM `users`', (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+        res.json(result)
+        })
 })

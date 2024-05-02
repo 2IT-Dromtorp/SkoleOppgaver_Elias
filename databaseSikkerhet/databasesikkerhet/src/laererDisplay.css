@@ -1,0 +1,21 @@
+.user-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .user-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .user-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-details {
+    font-size: 16px;
+  }
+  

@@ -1,0 +1,25 @@
+tbody img{
+    width: 75px;
+    max-height: 150px
+}
+
+.tatt {
+    background-color: red;
+    display: flex;
+    height: 150px;
+}
+
+.ikketatt {
+    background-color: green;
+    display: flex;
+    height: 150px;
+}
+
+
+td button {
+    border : none;
+    background-color: transparent;
+    cursor: pointer;
+    width:  100%;
+    height: 100%;
+}
