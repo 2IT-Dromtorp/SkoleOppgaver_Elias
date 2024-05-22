@@ -4,14 +4,16 @@ const cors = require('cors');
 
 const app = express();
 
+const port = process.env.PORT || 8080;
+
 app.use(express.json());
 app.use(cors());
 
 app.listen(8080, () => {
-    console.log('Server is running on port 8080');
+    console.log('Server is running on port ' + port);
 })
 
-const conn = mysql.createConnection({
+const db = mysql.createConnection({
     host: 'mulighet.no',
     user: 'MongoDB',
     password: 'passord',
@@ -19,18 +21,34 @@ const conn = mysql.createConnection({
     port: "3306"
 })
 
-conn.connect((err) => {
+db.connect(err => {
     if (err) {
-        console.log(err)
+        console.error('Error connecting to MySQL:', err);
+        return;
     }
-    console.log('connected to db')
-})
+    console.log('Connected to MySQL');
+});
 
-app.get ('/api/products', (req, res) => {
-    const query = conn.query('SELECT * FROM `mat`', (err, results) => {
+
+app.get('/api/items', (req, res) => {
+    db.query('SELECT * FROM mat WHERE STK > 0', (err, results) => {
         if (err) {
-            return res.status(500).json({ success: false, message: 'Internal server error' });
+            return res.status(500).json({ error: err.message });
         }
-        return res.status(200).json({ success: true, message: 'Products fetched successfully', products: results });
-    })
-})
+        res.json(results);
+    });
+});
+
+app.post('/api/order/:item_id', (req, res) => {
+    const { item_id } = req.params;
+    db.query('UPDATE mat SET STK = STK - 1 WHERE id = ? AND STK > 0', [item_id], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).json({ error: err.message });
+        }
+        if (results.affectedRows === 0) {
+            return res.status(400).json({ error: 'Item not available' });
+        }
+        res.sendStatus(200);
+    });
+});
