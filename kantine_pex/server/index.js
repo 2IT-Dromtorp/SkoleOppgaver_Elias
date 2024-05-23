@@ -31,13 +31,14 @@ db.connect(err => {
 
 
 app.get('/api/items', (req, res) => {
-    db.query('SELECT * FROM mat WHERE STK > 0', (err, results) => {
+    db.query('SELECT * FROM mat', (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
         }
         res.json(results);
     });
 });
+
 
 app.post('/api/order/:item_id', (req, res) => {
     const { item_id } = req.params;
