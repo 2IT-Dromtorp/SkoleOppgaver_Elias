@@ -53,3 +53,5 @@ app.post('/api/order/:item_id', (req, res) => {
         res.sendStatus(200);
     });
 });
+
+app.use(express.static("build"));
