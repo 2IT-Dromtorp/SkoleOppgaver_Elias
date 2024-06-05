@@ -1,0 +1,11 @@
+------WebKitFormBoundaryTyaZu6nJbfABLN64
+Content-Disposition: form-data; name="file"; filename="test.json"
+Content-Type: application/json
+
+{
+"mat":[
+	{"Mat_navn":"test", "Bilde":"test", "STK":"20", "Pris":"20"}
+]
+}
+
+------WebKitFormBoundaryTyaZu6nJbfABLN64--

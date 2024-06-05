@@ -23,6 +23,18 @@ function App() {
         cells={materialCells}
         onChange={({ data, errors }) => setData(data)}
       />
+
+      <button onClick={() => {
+        const formData = new FormData();
+        formData.append('json', JSON.stringify(data));
+        fetch('https://localhost:5001/api/uploadJson', {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+      }}>Send to SQL Server</button>
     </div>
   );
 }

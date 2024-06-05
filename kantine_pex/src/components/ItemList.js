@@ -23,7 +23,7 @@ const ItemList = () => {
 
   const handleOrder = async (itemId) => {
     try {
-      await axios.post(`/api/order/${itemId}`);
+      await axios.post(`http://localhost:8080/api/order/${itemId}`);
       fetchItems();
       setCart((old) => {
         const newCart = { ...old };
@@ -55,12 +55,13 @@ const ItemList = () => {
 
   return (
     <>
-      <h1>Tilgjengelige Varer i Kantinen</h1>
-      <div>
-        <div id="cart">
-          {items
-            ? Object.entries(cart).map(([key, val]) => {
-                const item = items.find((it) => it.id === parseInt(key));
+    <h1>Tilgjengelige Varer i Kantinen</h1>
+    <div>
+      <div id="cart">
+        {items
+          ? Object.entries(cart).map(([key, val]) => {
+              const item = items.find((it) => it.id === parseInt(key));
+              if (item && item.Mat_navn) {
                 return (
                   <div className="cart_item" key={key}>
                     <div className="cart_item_name">{item.Mat_navn}</div>
@@ -72,28 +73,54 @@ const ItemList = () => {
                     </button>
                   </div>
                 );
-              })
-            : undefined}
-        </div>
-        {Object.keys(cart).length > 0 ? (
-          <button
-            onClick={() => {
-              setCart([]);
-              localStorage.setItem("cart", "[]");
-            }}
-          >
-            Betal
-          </button>
-        ) : undefined}
-      </div>
-      <div id="item_list">
-        {items
-          ? items.map((item) => (
-              <Item key={item.id} item={item} onOrder={handleOrder} />
-            ))
+              }
+            })
           : undefined}
       </div>
-    </>
+      {Object.keys(cart).length > 0 ? (
+        <button
+          onClick={() => {
+            setCart([]);
+            localStorage.setItem("cart", "[]");
+          }}
+        >
+          Betal
+        </button>
+        
+      ) : undefined}
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        const fileInput = document.getElementById("fileInput");
+        const selectedFile = fileInput.files[0];
+        const formData = new FormData();
+        for (let i = 0; i < fileInput.files.length; i++) {
+          formData.append("file", fileInput.files[i]);
+        }
+        axios.post("/api/upload", formData)
+          .then((res) => {
+            console.log(res.data);
+            console.log("Uploaded file:", {
+              name: selectedFile.name,
+              size: selectedFile.size,
+              type: selectedFile.type,
+            });
+          })
+          .catch((err) => {
+            console.error("Error uploading file:", err);
+          });
+      }}>
+        <input type="file" id="fileInput" multiple />
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+    <div id="item_list">
+      {items
+        ? items.map((item) => (
+            <Item key={item.id} item={item} onOrder={handleOrder} />
+          ))
+        : undefined}
+    </div>
+  </>
   );
 };
 
