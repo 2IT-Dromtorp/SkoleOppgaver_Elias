@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
@@ -12,8 +12,10 @@ function App() {
       <Router>
         <div className="App">
           <header>
+            <Link to="/" className='logo-link'>
             <h1>ViHjelperDeg AS</h1>
             <p>Din IT-partner</p>
+            </Link>
           </header>
           <main>
             <Routes>
